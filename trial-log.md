@@ -96,3 +96,18 @@
 - About repo verified via `gh api` before bundling: homepage
   `https://make.fun/c/u-boge-your-agent-in-one-emoji-db30c1e4`, topics
   [ai-agents, bounties, makefun], default branch main.
+
+## Bundle v2 + check v2 (25 Nov 21:02 WITA)
+
+- Bundle v2: `bundle-v2.tar.gz`, 185,725 bytes, sha256
+  `658ae3ada9e1f05611d4a5acb6dc8ec922a3f2aa4d1852e7c2fd62dffb5ddd70`,
+  same session + prompt file, commit
+  `6747f570c20ec7e009f4cd5aeeb4aee6ee3c922d` (trial-log revision).
+- Check v2: 13 passed, 1 failed, 5 skipped.
+  - thinking_revised now PASSES: trial-log.md takes its final content from
+    2 messages that write/edit it. thinking_reproduces 97.5% (120/123
+    lines, 0 pasted).
+  - Only failure left: thinking_priced (0 usage rows — subagent rows flush
+    only when this run ends). Per task brief, this is reported as-is;
+    the coordinator re-bundles with usage rows from muse.db after this
+    run completes. No further fix is possible from this session.
